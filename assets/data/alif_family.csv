@@ -1,0 +1,7 @@
+# PLACEHOLDER: التسميات وصفية كتبها المؤلف (المؤلف)؛ لا كلمات ولا معانٍ مولَّدة بأداة AI
+# تُستبدل الأصوات والصور عند وصول الأصول المخطَّطة (مجلد assets/.../alif/)
+form,label_ar,sound_file,image_file
+hamza-above,همزة فوق الألف,sound-hamza-above.mp3,hamza-above.png
+hamza-below,همزة تحت الألف,sound-hamza-below.mp3,hamza-below.png
+hamza-madd,ألف ممدودة,sound-hamza-madd.mp3,hamza-madd.png
+hamza,همزة منفردة,sound-hamza.mp3,hamza.png
