@@ -59,3 +59,5 @@ app.*.map.json
 *.keystore
 key.properties
 google-services.json
+*.p12
+*.mobileprovision
