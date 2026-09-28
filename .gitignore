@@ -49,3 +49,13 @@ app.*.map.json
 
 # قواعد بيئة التطوير المحلية (لا تُنشر)
 .hermes.md
+
+# أسرار: لا تُرفع إطلاقًا (Secrets, never commit)
+.env
+.env.*
+*.key
+*.pem
+*.jks
+*.keystore
+key.properties
+google-services.json
