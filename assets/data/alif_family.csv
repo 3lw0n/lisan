@@ -1,5 +1,3 @@
-# التسميات وصفية فقط؛ لا كلمات ولا معانٍ مولَّدة بأداة AI
-# الصور والأصوات تُقرأ من مجلد assets/images/letters/alif/ و assets/audio/letters/alif/
 form,label_ar,sound_file,image_file
 hamza-above,همزة فوق الألف,sound-hamza-above.mp3,hamza-above.png
 hamza-below,همزة تحت الألف,sound-hamza-below.mp3,hamza-below.png
