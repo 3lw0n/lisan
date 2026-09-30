@@ -9,6 +9,8 @@ class AppTheme {
     return ThemeData(
       colorScheme: ColorScheme.fromSeed(seedColor: primary),
       useMaterial3: true,
+      // تأثير لمس ثابت يعمل على كل المنصّات (بلا اعتماد على تظليل خاص بمنصّة)
+      splashFactory: InkRipple.splashFactory,
       // خط عربي مضمَّن في التطبيق: يضمن شكل الحرف واتساقه على كل جهاز
       fontFamily: 'NotoNaskhArabic',
       // العربية تحتاج ارتفاع سطر أوسع وإلا تُقتطع رؤوس الحروف ونقاطها
