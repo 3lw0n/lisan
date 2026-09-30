@@ -120,22 +120,34 @@ class _LetterScreenState extends State<LetterScreen> {
           const SizedBox(height: 8),
           Text('الأشكال الأربعة', style: text.titleMedium),
           const SizedBox(height: 8),
-          Row(
-            children: [
-              for (final f in LetterForm.values)
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: Column(
-                      children: [
-                        _image(_l.formPath(f), _hasForm[f], height: 64),
-                        const SizedBox(height: 4),
-                        Text(f.labelAr),
-                      ],
+          // نعرض الأشكال الموجودة فعلًا فقط: بعض الحروف (مثل الألف)
+          // لا شكل لها في الأول والوسط، فلا نُظهر إطارًا فارغًا يوهم بالنقص.
+          Builder(
+            builder: (context) {
+              final present = LetterForm.values.where((f) => _hasForm[f] == true).toList();
+              final loading = _hasForm.isEmpty;
+              if (!loading && present.isEmpty) {
+                return const MissingAssetBox(message: kNotAddedYet);
+              }
+              final shown = loading ? LetterForm.values.toList() : present;
+              return Row(
+                children: [
+                  for (final f in shown)
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 4),
+                        child: Column(
+                          children: [
+                            _image(_l.formPath(f), _hasForm[f], height: 72),
+                            const SizedBox(height: 4),
+                            Text(f.labelAr),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-            ],
+                ],
+              );
+            },
           ),
           const SizedBox(height: 20),
           Text('صوت الحرف', style: text.titleMedium),
