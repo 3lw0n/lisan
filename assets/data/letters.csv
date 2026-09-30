@@ -1,32 +1,32 @@
-# PLACEHOLDER: تُستبدل بالأصول المخطَّطة
-# الأسماء اللاتينية مطابقة حرفيًّا لجدول القسم ٣ في «مواصفة الأصول.pdf» (٢٨ حرفًا)
-# word و meaning_en فارغان عن قصد: المحتوى التعليمي يكتبه المؤلف لا أداة AI
+# أصول الحروف لِتطبيق لِسان
+# الأسماء اللاتينية مطابقة حرفيًّا لمواصفة الأصول (٢٨ حرفًا).
+# word و meaning_en: كُتبتا بمساعدة أداة ذكاء اصطناعي، ومُفصَح عن ذلك في THIRD_PARTY.md.
 letter,name_en,word,meaning_en
-ا,alif,,
-ب,ba,,
-ت,ta,,
-ث,tha,,
-ج,jim,,
-ح,ha,,
-خ,kha,,
-د,dal,,
-ذ,dhal,,
-ر,ra,,
-ز,zay,,
-س,sin,,
-ش,shin,,
-ص,sad,,
-ض,dad,,
-ط,tah,,
-ظ,zah,,
-ع,ayn,,
-غ,ghayn,,
-ف,fa,,
-ق,qaf,,
-ك,kaf,,
-ل,lam,,
-م,mim,,
-ن,nun,,
-ه,haa,,
-و,waw,,
-ي,ya,,
+ا,alif,أسد,lion
+ب,ba,باب,door
+ت,ta,تمر,dates
+ث,tha,ثعلب,fox
+ج,jim,جمل,camel
+ح,ha,حصان,horse
+خ,kha,خبز,bread
+د,dal,دار,house
+ذ,dhal,ذهب,gold
+ر,ra,رمان,pomegranate
+ز,zay,زهرة,flower
+س,sin,سمك,fish
+ش,shin,شمس,sun
+ص,sad,صقر,falcon
+ض,dad,ضفدع,frog
+ط,tah,طائر,bird
+ظ,zah,ظل,shade
+ع,ayn,عين,eye
+غ,ghayn,غزال,gazelle
+ف,fa,فيل,elephant
+ق,qaf,قمر,moon
+ك,kaf,كتاب,book
+ل,lam,ليمون,lemon
+م,mim,ماء,water
+ن,nun,نار,fire
+ه,haa,هلال,crescent
+و,waw,وردة,rose
+ي,ya,يد,hand

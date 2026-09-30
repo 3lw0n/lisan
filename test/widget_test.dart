@@ -31,7 +31,7 @@ Future<void> _pumpApp(WidgetTester tester) async {
 void main() {
   setUp(() => SharedPreferences.setMockInitialValues({}));
 
-  testWidgets('ملف الحروف الفعلي: ٢٨ حرفًا بلا كلمات ولا معانٍ', (
+  testWidgets('ملف الحروف الفعلي: ٢٨ حرفًا بكلمات مثال ومعانٍ', (
     tester,
   ) async {
     final raw = (await tester.runAsync(
@@ -42,7 +42,7 @@ void main() {
     expect(letters.first.nameEn, 'alif');
     expect(letters.last.nameEn, 'ya');
     expect(
-      letters.every((l) => l.word.isEmpty && l.meaningEn.isEmpty),
+      letters.every((l) => l.word.isNotEmpty && l.meaningEn.isNotEmpty),
       isTrue,
     );
   });
