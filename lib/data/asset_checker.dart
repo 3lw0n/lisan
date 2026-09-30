@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 /// يتحقّق من وجود أصل داخل الحزمة قبل استخدامه، حتى لا تنهار الشاشة
-/// بخطأ `Unable to load asset` عندما لم تصل الأصول المخطَّطة بعد.
+/// بخطأ `Unable to load asset` عندما لا يكون الأصل موجودًا في الحزمة.
 class AssetChecker {
   AssetChecker({AssetBundle? bundle}) : _bundle = bundle ?? rootBundle;
 
