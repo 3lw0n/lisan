@@ -118,10 +118,8 @@ class _LetterScreenState extends State<LetterScreen> {
             ),
           ),
           const SizedBox(height: 8),
-          Text('الأشكال الأربعة', style: text.titleMedium),
-          const SizedBox(height: 8),
-          // نعرض الأشكال الموجودة فعلًا فقط: بعض الحروف (مثل الألف)
-          // لا شكل لها في الأول والوسط، فلا نُظهر إطارًا فارغًا يوهم بالنقص.
+          // نعرض الأشكال الموجودة فعلًا فقط: ستة حروف (ا د ذ ر ز و) لا تتصل
+          // بما بعدها فلها شكلان لا أربعة، والعنوان يتبع الحقيقة كما هي.
           Builder(
             builder: (context) {
               final present = LetterForm.values.where((f) => _hasForm[f] == true).toList();
@@ -130,21 +128,37 @@ class _LetterScreenState extends State<LetterScreen> {
                 return const MissingAssetBox(message: kNotAddedYet);
               }
               final shown = loading ? LetterForm.values.toList() : present;
-              return Row(
+              final title = shown.length == 4
+                  ? 'الأشكال الأربعة'
+                  : shown.length == 2
+                        ? 'شكلان (لا يتصل بما بعده)'
+                        : 'الأشكال: ${shown.length}';
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (final f in shown)
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: Column(
-                          children: [
-                            _image(_l.formPath(f), _hasForm[f], height: 72),
-                            const SizedBox(height: 4),
-                            Text(f.labelAr),
-                          ],
+                  Text(
+                    title,
+                    key: const Key('forms_title'),
+                    style: text.titleMedium,
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    children: [
+                      for (final f in shown)
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Column(
+                              children: [
+                                _image(_l.formPath(f), _hasForm[f], height: 72),
+                                const SizedBox(height: 4),
+                                Text(f.labelAr),
+                              ],
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
+                    ],
+                  ),
                 ],
               );
             },

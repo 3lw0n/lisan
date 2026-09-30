@@ -28,6 +28,32 @@ Future<void> _pumpApp(WidgetTester tester) async {
   await tester.pumpAndSettle();
 }
 
+/// فاحص يعتبر موجودًا ما نمرّره له فقط (نمذجة حرف له أربعة أشكال وحرف له شكلان).
+class _FormsChecker extends AssetChecker {
+  _FormsChecker(this.present);
+  final Set<String> present;
+  @override
+  Future<bool> exists(String path) async => present.contains(path);
+}
+
+/// يفتح شاشة حرف مباشرة بفاحص محدَّد.
+Future<void> _pumpLetter(
+  WidgetTester tester,
+  Letter letter,
+  AssetChecker checker,
+) async {
+  await tester.pumpWidget(
+    MaterialApp(
+      home: LetterScreen(
+        letter: letter,
+        progress: ProgressStore(),
+        assets: checker,
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
 void main() {
   setUp(() => SharedPreferences.setMockInitialValues({}));
 
@@ -45,6 +71,42 @@ void main() {
       letters.every((l) => l.word.isNotEmpty && l.meaningEn.isNotEmpty),
       isTrue,
     );
+  });
+
+  testWidgets('حرف له أربعة أشكال: العنوان «الأشكال الأربعة»', (tester) async {
+    const l = Letter(letter: 'ب', nameEn: 'ba', word: 'باب', meaningEn: 'door');
+    final paths = <String>{
+      l.letterPath,
+      for (final f in LetterForm.values) l.formPath(f),
+    };
+    await _pumpLetter(tester, l, _FormsChecker(paths));
+    expect(find.text('الأشكال الأربعة'), findsOneWidget);
+    expect(find.text('منفصل'), findsOneWidget);
+    expect(find.text('وسط'), findsOneWidget);
+  });
+
+  testWidgets('حرف لا يتصل بما بعده (ر): شكلان وعنوان صريح لا «أربعة»', (
+    tester,
+  ) async {
+    const r = Letter(
+      letter: 'ر',
+      nameEn: 'ra',
+      word: 'رمان',
+      meaningEn: 'pomegranate',
+    );
+    final paths = <String>{
+      r.letterPath,
+      r.formPath(LetterForm.isolated),
+      r.formPath(LetterForm.finalForm),
+    };
+    await _pumpLetter(tester, r, _FormsChecker(paths));
+    expect(find.text('شكلان (لا يتصل بما بعده)'), findsOneWidget);
+    expect(find.text('منفصل'), findsOneWidget);
+    expect(find.text('آخر'), findsOneWidget);
+    // لا نُظهر شكلين غير موجودين للحرف
+    expect(find.text('أول'), findsNothing);
+    expect(find.text('وسط'), findsNothing);
+    expect(find.text('الأشكال الأربعة'), findsNothing);
   });
 
   testWidgets('الشبكة تعرض ٢٨ حرفًا في ٤ أعمدة', (tester) async {
