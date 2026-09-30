@@ -65,6 +65,64 @@ flutter:
   # Add one line per letter folder (audio + images + images/forms) as Elias's assets arrive.
   assets:
     - assets/data/
+    - assets/images/
+    - assets/images/brand/
+    - assets/images/letters/alif/
+    - assets/images/letters/alif/forms/
+    - assets/images/letters/ba/
+    - assets/images/letters/ba/forms/
+    - assets/images/letters/ta/
+    - assets/images/letters/ta/forms/
+    - assets/images/letters/tha/
+    - assets/images/letters/tha/forms/
+    - assets/images/letters/jim/
+    - assets/images/letters/jim/forms/
+    - assets/images/letters/ha/
+    - assets/images/letters/ha/forms/
+    - assets/images/letters/kha/
+    - assets/images/letters/kha/forms/
+    - assets/images/letters/dal/
+    - assets/images/letters/dal/forms/
+    - assets/images/letters/dhal/
+    - assets/images/letters/dhal/forms/
+    - assets/images/letters/ra/
+    - assets/images/letters/ra/forms/
+    - assets/images/letters/zay/
+    - assets/images/letters/zay/forms/
+    - assets/images/letters/sin/
+    - assets/images/letters/sin/forms/
+    - assets/images/letters/shin/
+    - assets/images/letters/shin/forms/
+    - assets/images/letters/sad/
+    - assets/images/letters/sad/forms/
+    - assets/images/letters/dad/
+    - assets/images/letters/dad/forms/
+    - assets/images/letters/tah/
+    - assets/images/letters/tah/forms/
+    - assets/images/letters/zah/
+    - assets/images/letters/zah/forms/
+    - assets/images/letters/ayn/
+    - assets/images/letters/ayn/forms/
+    - assets/images/letters/ghayn/
+    - assets/images/letters/ghayn/forms/
+    - assets/images/letters/fa/
+    - assets/images/letters/fa/forms/
+    - assets/images/letters/qaf/
+    - assets/images/letters/qaf/forms/
+    - assets/images/letters/kaf/
+    - assets/images/letters/kaf/forms/
+    - assets/images/letters/lam/
+    - assets/images/letters/lam/forms/
+    - assets/images/letters/mim/
+    - assets/images/letters/mim/forms/
+    - assets/images/letters/nun/
+    - assets/images/letters/nun/forms/
+    - assets/images/letters/haa/
+    - assets/images/letters/haa/forms/
+    - assets/images/letters/waw/
+    - assets/images/letters/waw/forms/
+    - assets/images/letters/ya/
+    - assets/images/letters/ya/forms/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
