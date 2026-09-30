@@ -89,6 +89,8 @@ class _LetterScreenState extends State<LetterScreen> {
     return Image.asset(
       path,
       height: height,
+      width: double.infinity,
+      fit: BoxFit.contain,
       errorBuilder: (_, _, _) =>
           MissingAssetBox(message: kNotAddedYet, height: height),
     );
@@ -103,10 +105,16 @@ class _LetterScreenState extends State<LetterScreen> {
         padding: const EdgeInsets.all(16),
         children: [
           Center(
-            child: Text(
-              _l.letter,
+            child: Image.asset(
+              _l.letterPath,
               key: const Key('big_letter'),
-              style: const TextStyle(fontSize: 120),
+              height: 170,
+              fit: BoxFit.contain,
+              // لو غابت الصورة نرسم الحرف بخط التطبيق بارتفاع سطر يمنع القطع
+              errorBuilder: (_, _, _) => Text(
+                _l.letter,
+                style: const TextStyle(fontSize: 110, height: 1.7),
+              ),
             ),
           ),
           const SizedBox(height: 8),
@@ -120,7 +128,7 @@ class _LetterScreenState extends State<LetterScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 4),
                     child: Column(
                       children: [
-                        _image(_l.formPath(f), _hasForm[f], height: 70),
+                        _image(_l.formPath(f), _hasForm[f], height: 64),
                         const SizedBox(height: 4),
                         Text(f.labelAr),
                       ],

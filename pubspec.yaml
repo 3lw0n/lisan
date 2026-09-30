@@ -63,6 +63,11 @@ flutter:
 
   # Lisan: declare ONLY folders that exist (Flutter fails the build otherwise).
   # Add one line per letter folder (audio + images + images/forms) as Elias's assets arrive.
+  fonts:
+    - family: NotoNaskhArabic
+      fonts:
+        - asset: assets/fonts/NotoNaskhArabic-Regular.ttf
+
   assets:
     - assets/data/
     - assets/images/
