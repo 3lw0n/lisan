@@ -70,7 +70,3 @@ flutter build web                    # معاينة على المتصفح
 ## المؤلف
 
 **Faisal Muwaffaq Alwan** · [@3lw0n](https://github.com/3lw0n)
-
-## الرخصة
-
-MIT، كما في ملف `LICENSE`.
